@@ -1,0 +1,55 @@
+#myelement {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style for the buttons */
+button {
+  background-color: #0074D9;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for the labels and inputs */
+label, input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Style for the tablero */
+#tablero {
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Style for the casillas */
+.casilla {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  background-color: #eee;
+  border: 5px solid #ccc;
+  margin: 5px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+}
+
+/* Style for the tablero2 */
+#tablero2 {
+  margin-top: 20px;
+  text-align: left;
+width: 300px;
+height: 300px;
+/*       margin: auto; */
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+}
+
+/* Additional styles can be added as needed */
