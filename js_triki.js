@@ -4,26 +4,45 @@ document.getElementById("tablaPuntajes").addEventListener("click", verTablaPunta
 document.getElementById("salir").addEventListener("click", salir);
 
 function iniciarNuevaPartida() {
-       var gameBoardHTML = `
-      <!-- Casillas del juego -->
-      <div id="inicioPartida"e>
+        var gameBoardHTML = `
+    <!-- Casillas del juego -->
+    <div id="inicioPartida">
         <h2>Ingresa los nombres de los jugadores:</h2>
         <label for="jugador1">Jugador 1:</label>
         <input type="text" id="jugador1" placeholder="Nombre del Jugador 1">
+        <input name="intereses" id="statePlayer2" type="radio" value="rbiinternet" checked="checked" />
+        <label for="statePlayer2">First Pick</label>
         <br>
         <label for="jugador2">Jugador 2:</label>
         <input type="text" id="jugador2" placeholder="Nombre del Jugador 2">
+        <input name="intereses" id="statePlayer2" type="radio" value="rbiinternet" checked="checked" />
+        <label for="statePlayer2">First Pick</label>
         <br>
-        <button id="comenzarPartida">Comenzar Partida</button>
+        <button id="comenzarPartida" disabled>Comenzar Partida</button>
     </div>
     `;
     // Set the innerHTML of the "tablero" element to the game board HTML
     document.getElementById("tablero").innerHTML = gameBoardHTML;
-		document.getElementById("comenzarPartida").addEventListener("click", comenzarPartida);
+    // Add event listeners to input fields
+    document.getElementById("jugador1").addEventListener("input", checkInputs);
+    document.getElementById("jugador2").addEventListener("input", checkInputs);
+    document.getElementById("comenzarPartida").addEventListener("click", comenzarPartida);
+}
+
+function checkInputs() {
+    var jugador1Input = document.getElementById("jugador1").value;
+    var jugador2Input = document.getElementById("jugador2").value;
+    var comenzarPartidaButton = document.getElementById("comenzarPartida");
+
+    if (jugador1Input.trim() !== "" && jugador2Input.trim() !== "") {
+        comenzarPartidaButton.removeAttribute("disabled");
+    } else {
+        comenzarPartidaButton.setAttribute("disabled", "disabled");
+    }
 }
 
 function comenzarPartida() {
-    var gameBoardHTML = `
+      var gameBoardHTML = `
       <!-- Casillas del juego -->
       <div class="casilla" id="c11"></div>
       <div class="casilla" id="c12"></div>

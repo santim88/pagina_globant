@@ -40,6 +40,19 @@ label, input {
   font-size: 18px;
 }
 
+#inicioPartida label {
+    display: inline-block;
+    vertical-align: middle; /* Align the label vertically with the input */
+    width: 150px; /* Adjust the width as needed */
+}
+
+#inicioPartida input[type="text"],
+#inicioPartida input[type="radio"] {
+    display: inline-block;
+    vertical-align: middle; /* Align the input vertically with the label */
+    width: auto; /* Let the input element determine its width */
+}
+
 /* Style for the tablero2 */
 #tablero2 {
   margin-top: 20px;
